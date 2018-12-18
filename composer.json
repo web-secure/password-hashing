@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Viper\\PasswordHashing\\": "./src"
+            "Viper\\": "./src"
         },
         "files": [
             "./bootstrap.php"

@@ -94,7 +94,7 @@ class PasswordHashing
             throw new \InvalidArgumentException('Using BCRYPT the password can not be longer than 72 characters.');
         }
         if (\password_verify($password, $hash)) {
-            if (\password_needs_rehash($hash, $this->algo[$this->options['algo']], $options)) {
+            if (\password_needs_rehash($hash, $this->algo[$this->options['algo']], $this->hashOptions)) {
                 $newHash = $this->create($password);
                 return [
                     'verified' => \true,

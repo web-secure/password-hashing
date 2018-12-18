@@ -37,7 +37,7 @@ class PasswordHashing
      */
     public function __construct(array $passwordHashingParams = [])
     {
-        $resolver = \Symfony\Component\OptionsResolver\OptionsResolver();
+        $resolver = new \Symfony\Component\OptionsResolver\OptionsResolver();
         $resolver->setDefaults([
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,

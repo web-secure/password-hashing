@@ -16,7 +16,7 @@ class PasswordHashingTest extends TestCase
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $this->assertTrue(true);
-        $options['algo'] = 'argon2i'
+        $options['algo'] = 'argon2i';
         $passwordHasher = new \Viper\PasswordHashing($options);
         $this->assertTrue(true);
         // Constructor works!

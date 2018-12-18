@@ -23,6 +23,7 @@ class PasswordHashingTest extends TestCase
 
     public function testBcryptError1()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $options = [
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,
@@ -32,11 +33,11 @@ class PasswordHashingTest extends TestCase
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $hash = $passwordHasher->create('55ufbabm5&[-q=`_Br!~K.6NN<rXSsbLQ!A[cd>,"\'4\{5$!JmZupv_@A<R_Pc*m7:9-P{t">T.Q=u&s');
-        $this->expectException(\InvalidArgumentException::class);
     }
 
     public function testBcryptError2()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $options = [
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,
@@ -49,7 +50,6 @@ class PasswordHashingTest extends TestCase
         if ($passwordHasher->verify('55ufbabm5&[-q=`_Br!~K.6NN<rXSsbLQ!A[cd>,"\'4\{5$!JmZupv_@A<R_Pc*m7:9-P{t">T.Q=u&s', $hash))
         {
         }
-        $this->expectException(\InvalidArgumentException::class);
     }
 
     public function testPasswordCreateAndVerify()

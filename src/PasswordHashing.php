@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 /**
- * ViperCMS.
+ * ViperCMS - PasswordHashing.
  * 
  * @author Nicholas English <https://github.com/iszorpal>.
- * @link <https://github.com/iszorpal/vipercms>.
+ * @link <https://github.com/iszorpal/password-hashing>.
  */
 
 namespace Viper;

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 /**
- * ViperCMS - PasswordHashing.
+ * ViperCMS.
  * 
  * @author Nicholas English <https://github.com/iszorpal>.
- * @link <https://github.com/iszorpal/password-hashing>.
+ * @link <https://github.com/iszorpal/vipercms>.
  */
 
 namespace Viper;
@@ -31,13 +31,13 @@ class PasswordHashing
     /**
      * Initialize the password hashing class.
      *
-     * @param array                                              $passwordHashingParams The password hashing parameters.
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver              The options resolver.
+     * @param array $passwordHashingParams The password hashing parameters.
      *
      * @return void.
      */
-    public function __construct(array $passwordHashingParams = [], \Symfony\Component\OptionsResolver\OptionsResolver $resolver)
+    public function __construct(array $passwordHashingParams = [])
     {
+        $resolver = \Symfony\Component\OptionsResolver\OptionsResolver();
         $resolver->setDefaults([
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,

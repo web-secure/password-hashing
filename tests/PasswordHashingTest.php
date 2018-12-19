@@ -9,10 +9,10 @@ class PasswordHashingTest extends TestCase
     {
         $options = [
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 10,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
+            'cost' => 10,
+            'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $this->assertTrue(\true);
@@ -26,10 +26,7 @@ class PasswordHashingTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $options = [
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 10,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
+            'cost' => 10,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $hash = $passwordHasher->create('55ufbabm5&[-q=`_Br!~K.6NN<rXSsbLQ!A[cd>,"\'4\{5$!JmZupv_@A<R_Pc*m7:9-P{t">T.Q=u&s');
@@ -41,9 +38,6 @@ class PasswordHashingTest extends TestCase
         $options = [
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $hash = $passwordHasher->create('Hello World!');
@@ -57,9 +51,6 @@ class PasswordHashingTest extends TestCase
          $options = [
             'algo' => 'bcrypt',
             'bcrypt_cost' => 10,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $this->assertTrue(\true);
@@ -81,10 +72,7 @@ class PasswordHashingTest extends TestCase
         }
         $options = [
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 15,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
+            'cost' => 15,
         ];
         $passwordHasher2 = new \Viper\PasswordHashing($options);
         $res = $passwordHasher2->verify('Hello World!', $hash);

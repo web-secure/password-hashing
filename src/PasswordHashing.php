@@ -33,6 +33,8 @@ class PasswordHashing
      *
      * @param array $passwordHashingParams The password hashing parameters.
      *
+     * @throws UnexpectedValueException If an unkown algo was passed.
+     *
      * @return void.
      */
     public function __construct(array $passwordHashingParams = [])
@@ -46,10 +48,12 @@ class PasswordHashing
             'threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ]);
         $this->options = $resolver->resolve($passwordHashingParams);
+        $this->options['algo'] = \strtolower($this->options['algo']);
         if ($this->options['algo'] == 'bcrypt') {
             $this->hashOptions = [
                 'cost' => $this->options['cost']
             ];
+            $algoConfirmed = \true;
         }
         if ($this->options['algo'] == 'argon2i' || $this->options['algo'] == 'argon2id') {
             $this->hashOptions = [
@@ -57,6 +61,10 @@ class PasswordHashing
                 'time_cost' => $this->options['time_cost'],
                 'threads' => $this->options['threads']
             ];
+            $algoConfirmed = \true;
+        }
+        if (!$algoConfirmed) {
+            throw new \UnexpectedValueException('An unknown algo was passed.');
         }
     }
 

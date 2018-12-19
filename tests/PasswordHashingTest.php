@@ -37,7 +37,7 @@ class PasswordHashingTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $options = [
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 10,
+            'cost' => 10,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $hash = $passwordHasher->create('Hello World!');
@@ -50,7 +50,7 @@ class PasswordHashingTest extends TestCase
     {
          $options = [
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 10,
+            'cost' => 10,
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $this->assertTrue(\true);

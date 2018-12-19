@@ -40,22 +40,22 @@ class PasswordHashing
         $resolver = new \Symfony\Component\OptionsResolver\OptionsResolver();
         $resolver->setDefaults([
             'algo' => 'bcrypt',
-            'bcrypt_cost' => 10,
-            'argon_memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'argon_time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'argon_threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
+            'cost' => 10,
+            'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ]);
         $this->options = $resolver->resolve($passwordHashingParams);
         if ($this->options['algo'] == 'bcrypt') {
             $this->hashOptions = [
-                'cost' => $this->options['bcrypt_cost']
+                'cost' => $this->options['cost']
             ];
         }
         if ($this->options['algo'] == 'argon2i' || $this->options['algo'] == 'argon2id') {
             $this->hashOptions = [
-                'memory_cost' => $this->options['argon_memory_cost'],
-                'time_cost' => $this->options['argon_time_cost'],
-                'threads' => $this->options['argon_threads']
+                'memory_cost' => $this->options['memory_cost'],
+                'time_cost' => $this->options['time_cost'],
+                'threads' => $this->options['threads']
             ];
         }
     }

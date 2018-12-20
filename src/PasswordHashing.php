@@ -49,6 +49,7 @@ class PasswordHashing
         ]);
         $this->options = $resolver->resolve($passwordHashingParams);
         $this->options['algo'] = \strtolower($this->options['algo']);
+        $algoConfirmed = \false;
         if ($this->options['algo'] == 'bcrypt') {
             $this->hashOptions = [
                 'cost' => $this->options['cost']

@@ -41,6 +41,9 @@ class PasswordHashingTest extends TestCase
         ];
         $passwordHasher = new \Viper\PasswordHashing($options);
         $hash = $passwordHasher->create('Hello World!');
+        if ($passwordHasher->verify('55ufbabm5&[-q=`_Br!~K.6NN<rXSsbLQ!A[cd>,"\'4\{5$!JmZupv_@A<R_Pc*m7:9-P{t">T.Q=u&s', $hash))
+        {
+        }
     }
 
     public function testConstructorError1()

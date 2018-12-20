@@ -48,7 +48,7 @@ class PasswordHashingTest extends TestCase
 
     public function testConstructorError1()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(\UnexpectedValueException::class);
         $options = [
             'algo' => 'other',
             'cost' => 10,

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace WebSecure\PasswordHashing\Test;
 
 use PHPUnit\Framework\TestCase;

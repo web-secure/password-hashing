@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @link <https://github.com/web-secure/password-hashing>.
  */
 
-namespace Viper;
+namespace WebSecure;
 
 /**
  * The password hashing class.

@@ -1,5 +1,5 @@
 {
-    "name": "iszorpal/password-hashing",
+    "name": "web-secure/password-hashing",
     "description": "Basic password hashing with PHP.",
     "keywords": [],
     "license": "MIT",

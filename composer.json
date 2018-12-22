@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Viper\\": "./src"
+            "WebSecure\\": "./src"
         },
         "files": [
             "./bootstrap.php"

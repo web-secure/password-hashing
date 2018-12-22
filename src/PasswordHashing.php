@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 /**
- * ViperCMS - PasswordHashing.
+ * WebSecure - PasswordHashing.
  * 
  * @author Nicholas English <https://github.com/iszorpal>.
- * @link <https://github.com/iszorpal/password-hashing>.
+ * @link <https://github.com/web-secure/password-hashing>.
  */
 
 namespace Viper;

@@ -1,5 +1,5 @@
 <?php
-namespace Viper\PasswordHashing\Test;
+namespace WebSecure\PasswordHashing\Test;
 
 use PHPUnit\Framework\TestCase;
 

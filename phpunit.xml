@@ -21,7 +21,7 @@
          timeoutForLargeTests="15"
          verbose="false">
     <testsuites>
-        <testsuite name="Viper Password Hashing Test Suite">
+        <testsuite name="WebSecure Password Hashing Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

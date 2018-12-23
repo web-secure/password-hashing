@@ -33,7 +33,7 @@ class PasswordHashing
      *
      * @param array $passwordHashingParams The password hashing parameters.
      *
-     * @throws UnexpectedValueException If an unkown algo was passed.
+     * @throws UnexpectedValueException If an unknown algo was passed.
      *
      * @return void.
      */

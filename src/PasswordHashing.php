@@ -12,7 +12,7 @@ namespace WebSecure;
 /**
  * The password hashing class.
  */
-class PasswordHashing implements \WebSecure\PasswordHashing\Interface
+class PasswordHashing implements \WebSecure\PasswordHashingInterface
 {
 
     /** @var array $algo Contains links to the password hashing algos. */

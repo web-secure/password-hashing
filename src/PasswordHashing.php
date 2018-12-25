@@ -33,7 +33,7 @@ class PasswordHashing implements \WebSecure\PasswordHashing\Interface
      *
      * @param array $passwordHashingParams The password hashing parameters.
      *
-     * @throws UnexpectedValueException If an unknown algo was passed.
+     * @throws \UnexpectedValueException If an unknown algo was passed.
      *
      * @return void.
      */
@@ -74,7 +74,7 @@ class PasswordHashing implements \WebSecure\PasswordHashing\Interface
      *
      * @param string $password The password to hash.
      *
-     * @throws InvalidArgumentException If the password is longer than 72 characters using bcrypt.
+     * @throws \InvalidArgumentException If the password is longer than 72 characters using bcrypt.
      *
      * @return string The hashed password.
      */
@@ -92,7 +92,7 @@ class PasswordHashing implements \WebSecure\PasswordHashing\Interface
      * @param string $password The password to check.
      * @param string $hash     The hash to check with.
      *
-     * @throws InvalidArgumentException If the password is longer than 72 characters using bcrypt.
+     * @throws \InvalidArgumentException If the password is longer than 72 characters using bcrypt.
      *
      * @return mixed Returns true if the hash matches and does not require a rehash and false if it does not match, else 
      *               returns an array containing if the password matches the hash and the new hash to update it with.

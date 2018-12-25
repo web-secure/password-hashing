@@ -12,7 +12,7 @@ namespace WebSecure;
 /**
  * The password hashing interface.
  */
-interface Interface
+interface PasswordHashingInterface
 {
 
     /**
